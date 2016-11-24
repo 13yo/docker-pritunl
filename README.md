@@ -1,7 +1,7 @@
 Pritunl
 ==============
 
-Docker instance for pritunl
+Docker instance for pritunl (thanks to https://github.com/lifeeth/docker-pritunl)
 
 This docker image helps you run pritunl. 
 
@@ -9,7 +9,7 @@ Be sure to expose all the ports needed.
 
 Steps to run Pritunl:
 --------------------
-1. docker pull lifeeth/pritunl
+1. docker pull 13yo/docker-pritunl
 2. docker run -d --privileged -p 1194:1194/udp -p 1194:1194/tcp -p 9700:9700/tcp lifeeth/pritunl
 3. Login to pritunl at http://your_docker_host:9700 with Username: admin Password: admin
 4. Add an organization and a user.
