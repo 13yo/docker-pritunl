@@ -1,16 +1,15 @@
 # Pritunl
 # 
 
-FROM ubuntu:14.04
+FROM ubuntu:16:10
 
-MAINTAINER Praneeth Bodduluri <lifeeth@resin.io>
+MAINTAINER Tobias Kaatz <tobias.kaatz@gmail.com> 
 
+ADD pritunl.list /etc/apt/sources.list.d/pritunl.list
+
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 RUN apt-get update -q
-RUN apt-get install -y software-properties-common python-software-properties 
-
-RUN add-apt-repository ppa:pritunl/ppa
-RUN apt-get update -q
-RUN apt-get install -y pritunl
+RUN apt-get install -y pritunl mongodb-server
 
 ADD entry.sh /bin/entry.sh
 
